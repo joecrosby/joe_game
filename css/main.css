@@ -101,19 +101,19 @@ span {
   color: white;
   font-weight: bold;
   position: absolute;
-  left: 0px;
   bottom: 0px;
   top: 0px;
   right: 0px;
   width: 43px;
+  left: -3px;
 }
 
 .stand-price {
   color: white;
   position: absolute;
-  top: 1px;
-  right: 61px;
   font-weight: bold;
+  right: -2px;
+  top: -2px;
 }
 
 .image-container img {
@@ -217,7 +217,7 @@ li {
   left: 200px;
   top: -40px;
   width: 66px;
-  height: 37px;
+  height: 36px;
 }
 
 .stand-can-buy {
