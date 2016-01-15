@@ -265,7 +265,7 @@
 
         incrementPressCount();
 
-        countdown(BEER_PRODUCE_BUTTON);
+        countdown(BEER_PRODUCE_BUTTON,BEER_STAND_BUTTON);
 
         if(canBuyStand()){
             enableButton(BEER_STAND_BUTTON);
@@ -304,7 +304,7 @@
 
     };
 
-    var countdown = function(button){
+    var countdown = function(button,button2){
 
         var useableTime = document.getElementById('return-timer').innerHTML;
         var useableTimeElements = useableTime.split(':');
@@ -343,11 +343,11 @@
 
                 totalSpan.innerHTML = (total + BEERReturn).toFixed(2);
                 timerSpan.innerHTML = useableTime;
-                
+
                 if(!canBuyStand()){
-                    disableButton(BEER_STAND_BUTTON);
+                    disableButton(button2);
                 }else{
-                    enableButton(BEER_STAND_BUTTON);
+                    enableButton(button2);
                 }
             }},1000);
 
