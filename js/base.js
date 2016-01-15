@@ -343,7 +343,16 @@
 
                 totalSpan.innerHTML = (total + BEERReturn).toFixed(2);
                 timerSpan.innerHTML = useableTime;
+                
+                if(!canBuyStand()){
+                    disableButton(BEER_STAND_BUTTON);
+                }else{
+                    enableButton(BEER_STAND_BUTTON);
+                }
             }},1000);
+
+
+
         };
 
     if(!canBuyStand()){
