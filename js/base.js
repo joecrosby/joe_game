@@ -250,10 +250,10 @@
 
     var buyStandAction = function(quantity){
 
-        var BEERStandsCount = getUseableValue(BEER_STAND_COUNT);
-        var BEERStandsSpan = getElement(BEER_STAND_COUNT);
+        var beerStandsCount = getUseableValue(BEER_STAND_COUNT);
+        var beerStandsSpan = getElement(BEER_STAND_COUNT);
 
-        BEERStandsSpan.innerHTML = BEERStandsCount + quantity;
+        beerStandsSpan.innerHTML = beerStandsCount + quantity;
         updateReturnValue();
         resetPressCount();
         updateGrandTotalAfterPurchase();
