@@ -1,5 +1,5 @@
-@import  url('https://fonts.googleapis.com/css?family=Rboto+Condensed:400,400italic');
-
+@import url("https://fonts.googleapis.com/css?family=Rboto+Condensed:400,400italic");
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
 h2 {
   text-align: center;
 }
@@ -7,25 +7,8 @@ h2 {
 body {
   background-image: url("../images/grey-patterned-wall-15730229.jpg");
   background-repeat: repeat-x;
-  background-size: 80% auto, 80%
-    auto;
+  background-size: 80% auto, 80%  auto;
   margin: 0;
-}
-
-.image-container {
-  height: 100px;
-  width: 75px;
-  margin: -24px 0px 0px
-    20px;
-}
-
-.image-container button {
-  border-radius: 50%;
-  background-color: rgb(102, 90, 182);
-  height: 72px;
-  position: relative;
-  border: 3px solid rgb(0,
-    0, 0);
 }
 
 button {
@@ -34,50 +17,38 @@ button {
   background-color: blue;
 }
 
-.canBuyContainer {
-  position: relative;
-  right: -1150px;
-  top: -98px;
-  width: 117px;
-}
-
-.grand-total p {
-  height: 128px;
-  margin-bottom: 0px;
-  margin-left: 0px;
-  margin-top: -3px;
-  padding-bottom: 0px;
-  padding-top: 0px;
-  width: 157px;
-}
-
-#can-buy {
-  width: 120px;
-  height: 40px;
-  font-size: 21px;
-  position: absolute;
-  top: -207px;
-  left: -232px;
-  text-shadow: -1px -1px 0px
-  rgb(0, 0, 0), 1px -1px
-  0px rgb(0, 0, 0), -1px
-  1px 0px rgb(0, 0, 0),
-  -1px 1px 0px rgb(0, 0,
-          0), 1px 1px 0px rgb(0,
-          0, 0);
-    font-family: 'Roboto Condensed', cursive;
-}
-
-#can-buy:hover {
-  background-color: skyblue;
-}
-
 span {
   padding: 2px;
 }
 
-.menu-buttons li button::after {
-  content: "hello";
+div.products-left {
+  height: 400px;
+  width: 32%;
+}
+
+li {
+  list-style-type: none;
+}
+
+.main {
+  position: relative;
+  left: 265px;
+  top: -204px;
+  width: 600px;
+}
+
+.image-container {
+  height: 100px;
+  width: 75px;
+  margin: -24px 0 0 20px;
+}
+
+.image-container button {
+  border-radius: 50%;
+  background-color: #665ab6;
+  height: 72px;
+  position: relative;
+  border: 3px solid black;
 }
 
 .return {
@@ -89,7 +60,7 @@ span {
   border: 2px solid black;
   position: absolute;
   width: 269px;
-  margin: 0px;
+  margin: 0;
   top: 6px;
   left: 109px;
   height: 21px;
@@ -105,25 +76,19 @@ span {
   margin-left: -1px;
   width: 200px;
   height: 40px;
-  text-shadow: -1px -1px 0px
-  rgb(0, 0, 0), 1px -1px
-  0px rgb(0, 0, 0), -1px
-  1px 0px rgb(0, 0, 0),
-  -1px 1px 0px rgb(0, 0,
-          0), 1px 1px 0px rgb(0,
-          0, 0);
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
 }
 
 .stand-buy-text {
   color: white;
   font-weight: bold;
   position: absolute;
-  bottom: 0px;
-  top: 0px;
-  right: 0px;
+  bottom: 0;
+  top: 0;
+  right: 0;
   width: 43px;
   left: -3px;
-  font-family: 'Fancify', cursive;
+  font-family: "Open Sans", serif;
   font-size: 16px;
 }
 
@@ -141,71 +106,17 @@ span {
 }
 
 .image-container button:hover:enabled {
-  background-color: rgb(102, 137, 247);
-}
-
-div.products-left {
-  height: 400px;
-  width: 32%;
-}
-
-.grand-total {
-  font-size: 60px;
-  color: white;
-  font-weight: bold;
-  margin-left: 286px;
-  position: absolute;
-  top: -4px;
-  text-shadow: -1px -1px 0px
-  rgb(0, 0, 0), 1px -1px
-  0px rgb(0, 0, 0), -1px
-  1px 0px rgb(0, 0, 0),
-  -1px 1px 0px rgb(0, 0,
-          0), 1px 1px 0px rgb(0,
-          0, 0);
-}
-
-.managers {
-
-}
-
-li {
-  list-style-type: none;
-}
-
-.upgrades {
-
-}
-
-.menu-buttons {
-  background-color: rgb(51, 200, 135);
-  color: black;
-  border: 3px solid black;
-  opacity: 0.7;
-}
-
-.menu-buttons:hover {
-  background-color: rgb(51, 145, 175);
-  color: black;
-  border: 3px solid black;
-  opacity: 0.9;
+  background-color: #6689f7;
 }
 
 .product-stand-count {
-  text-shadow: -1px -1px 0px
-    rgb(0, 0, 0), 1px -1px
-    0px rgb(0, 0, 0), -1px
-    1px 0px rgb(0, 0, 0),
-    -1px 1px 0px rgb(0, 0,
-    0), 1px 1px 0px rgb(0,
-    0, 0);
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
   border: 3px solid black;
   color: white;
   width: 68px;
   text-align: center;
   border-radius: 20%;
-  margin: -44px 0px 0px
-    22px;
+  margin: -44px 0 0 22px;
   position: absolute;
   height: 14px;
   background-color: blue;
@@ -225,13 +136,6 @@ li {
   bottom: -54px;
 }
 
-.main {
-  position: relative;
-  left: 265px;
-  top: -204px;
-  width: 600px;
-}
-
 .timer {
   position: relative;
   border: 2px solid black;
@@ -244,13 +148,7 @@ li {
   top: -40px;
   width: 66px;
   height: 36px;
-  text-shadow: -1px -1px 0px
-  rgb(0, 0, 0), 1px -1px
-  0px rgb(0, 0, 0), -1px
-  1px 0px rgb(0, 0, 0),
-  -1px 1px 0px rgb(0, 0,
-          0), 1px 1px 0px rgb(0,
-          0, 0);
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
 }
 
 .stand-can-buy {
@@ -262,7 +160,7 @@ li {
   top: 18px;
   left: 2px;
   text-align: left;
-  right: 0px;
+  right: 0;
 }
 
 .price-in-illions {
@@ -272,7 +170,7 @@ li {
   font-weight: bold;
   color: black;
   font-size: 9px;
-  margin-left: 0px;
+  margin-left: 0;
   right: 63px;
   text-align: right;
 }
@@ -281,4 +179,60 @@ li {
   border: 2px solid black;
   width: 262px;
   height: 317px;
+}
+
+.menu-buttons {
+  background-color: #33c887;
+  color: black;
+  border: 3px solid black;
+  opacity: 0.7;
+}
+
+.menu-buttons:hover {
+  background-color: #3391af;
+  color: black;
+  border: 3px solid black;
+  opacity: 0.9;
+}
+
+.grand-total {
+  font-size: 60px;
+  color: white;
+  font-weight: bold;
+  margin-left: 286px;
+  position: absolute;
+  top: -4px;
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+}
+
+.grand-total p {
+  height: 128px;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-top: -3px;
+  padding-bottom: 0;
+  padding-top: 0;
+  width: 157px;
+}
+
+#can-buy {
+  width: 120px;
+  height: 40px;
+  font-size: 19px;
+  position: absolute;
+  top: -207px;
+  left: -232px;
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+  font-family: "Open Sans", serif;
+}
+
+#can-buy:hover {
+  background-color: skyblue;
+}
+
+.canBuyContainer {
+  position: relative;
+  right: -1150px;
+  top: -98px;
+  width: 117px;
 }

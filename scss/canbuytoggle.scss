@@ -1,0 +1,32 @@
+@import "./partials/fonts";
+
+
+
+
+#can-buy {
+  width: 120px;
+  height: 40px;
+  font-size: 19px;
+  position: absolute;
+  top: -207px;
+  left: -232px;
+  text-shadow: -1px -1px 0
+  rgb(0, 0, 0), 1px -1px
+  0 rgb(0, 0, 0), -1px
+  1px 0 rgb(0, 0, 0),
+  -1px 1px 0 rgb(0, 0,
+                  0), 1px 1px 0 rgb(0,
+                  0, 0);
+  font-family: $font1;
+}
+
+#can-buy:hover {
+  background-color: skyblue;
+}
+
+.canBuyContainer {
+  position: relative;
+  right: -1150px;
+  top: -98px;
+  width: 117px;
+}

@@ -1,0 +1,22 @@
+@import "./partials/variables";
+
+
+.grand-total {
+  font-size: 60px;
+  color: white;
+  font-weight: bold;
+  margin-left: 286px;
+  position: absolute;
+  top: -4px;
+  text-shadow: $text-shadow;
+}
+
+.grand-total p {
+  height: 128px;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-top: -3px;
+  padding-bottom: 0;
+  padding-top: 0;
+  width: 157px;
+}
