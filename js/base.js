@@ -53,7 +53,7 @@
 
         enabledButton.removeAttribute('disabled');
         enabledButton.style.color = "white";
-        enabledButton.style.backgroundColor = "skyblue";
+        enabledButton.style.backgroundColor = "blue";
 
         return enabledButton;
 

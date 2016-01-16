@@ -8,6 +8,6 @@ you buy a stand the price goes up.
 
 Aim is to write it all in vanilla javascript.
 
-more products and features will be added soon.
+more products and features will be added soon. In the meantime, feel free to grab a fork and dig in.
 
 WORK IN PROGRESS
