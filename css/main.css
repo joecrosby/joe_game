@@ -1,3 +1,5 @@
+@import  url(https://fonts.googleapis.com/css?family=Roboto+Condensed:400,400italic);
+
 h2 {
   text-align: center;
 }
@@ -7,7 +9,7 @@ body {
   background-repeat: repeat-x;
   background-size: 80% auto, 80%
     auto;
-  margin: 0px;
+  margin: 0;
 }
 
 .image-container {
@@ -56,6 +58,14 @@ button {
   position: absolute;
   top: -207px;
   left: -232px;
+  text-shadow: -1px -1px 0px
+  rgb(0, 0, 0), 1px -1px
+  0px rgb(0, 0, 0), -1px
+  1px 0px rgb(0, 0, 0),
+  -1px 1px 0px rgb(0, 0,
+          0), 1px 1px 0px rgb(0,
+          0, 0);
+    font-family: 'Roboto Condensed', cursive;
 }
 
 #can-buy:hover {
@@ -95,6 +105,13 @@ span {
   margin-left: -1px;
   width: 200px;
   height: 40px;
+  text-shadow: -1px -1px 0px
+  rgb(0, 0, 0), 1px -1px
+  0px rgb(0, 0, 0), -1px
+  1px 0px rgb(0, 0, 0),
+  -1px 1px 0px rgb(0, 0,
+          0), 1px 1px 0px rgb(0,
+          0, 0);
 }
 
 .stand-buy-text {
@@ -106,6 +123,8 @@ span {
   right: 0px;
   width: 43px;
   left: -3px;
+  font-family: 'Fancify', cursive;
+  font-size: 16px;
 }
 
 .stand-price {
@@ -137,6 +156,13 @@ div.products-left {
   margin-left: 286px;
   position: absolute;
   top: -4px;
+  text-shadow: -1px -1px 0px
+  rgb(0, 0, 0), 1px -1px
+  0px rgb(0, 0, 0), -1px
+  1px 0px rgb(0, 0, 0),
+  -1px 1px 0px rgb(0, 0,
+          0), 1px 1px 0px rgb(0,
+          0, 0);
 }
 
 .managers {
@@ -182,7 +208,7 @@ li {
     22px;
   position: absolute;
   height: 14px;
-  background-color: skyblue;
+  background-color: blue;
 }
 
 #beer-stand-count {
@@ -218,6 +244,13 @@ li {
   top: -40px;
   width: 66px;
   height: 36px;
+  text-shadow: -1px -1px 0px
+  rgb(0, 0, 0), 1px -1px
+  0px rgb(0, 0, 0), -1px
+  1px 0px rgb(0, 0, 0),
+  -1px 1px 0px rgb(0, 0,
+          0), 1px 1px 0px rgb(0,
+          0, 0);
 }
 
 .stand-can-buy {
