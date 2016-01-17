@@ -1,5 +1,5 @@
-@import url("https://fonts.googleapis.com/css?family=Rboto+Condensed:400,400italic");
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
+@import url("https://fonts.googleapis.com/css?family=Rboto+Condensed:400,400italic");
 h2 {
   text-align: center;
 }
@@ -42,7 +42,6 @@ li {
   width: 75px;
   margin: -24px 0 0 20px;
 }
-
 .image-container button {
   border-radius: 50%;
   background-color: #665ab6;
@@ -105,7 +104,7 @@ li {
   height: 73%;
 }
 
-.image-container button:hover:enabled {
+button:hover:enabled {
   background-color: #6689f7;
 }
 
@@ -187,7 +186,6 @@ li {
   border: 3px solid black;
   opacity: 0.7;
 }
-
 .menu-buttons:hover {
   background-color: #3391af;
   color: black;
@@ -204,7 +202,6 @@ li {
   top: -4px;
   text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
 }
-
 .grand-total p {
   height: 128px;
   margin-bottom: 0;

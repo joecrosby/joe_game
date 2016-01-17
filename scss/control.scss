@@ -1,43 +1,56 @@
 // file to store css applicable to multiple elements
 
 //@TODO move line 4 to fonts partial and assign to new variable
-@import  url('https://fonts.googleapis.com/css?family=Rboto+Condensed:400,400italic');
 
 h2 {
+
   text-align: center;
+
 }
 
 body {
+
   background-image: url("../images/grey-patterned-wall-15730229.jpg");
   background-repeat: repeat-x;
   background-size: 80% auto, 80%  auto;
   margin: 0;
+
 }
 
 button {
+
   color: white;
   border: 2px solid black;
   background-color: blue;
+
 }
 
 span {
+
   padding: 2px;
+
 }
 
 div.products-left {
+
   height: 400px;
   width: 32%;
+
 }
 
 li {
+
   list-style-type: none;
+
 }
 
 .main {
+
   position: relative;
   left: 265px;
   top: -204px;
   width: 600px;
+
 }
 
 
