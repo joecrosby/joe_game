@@ -1,7 +1,5 @@
 @import "./partials/fonts";
-
-
-
+@import "./partials/variables";
 
 #can-buy {
   width: 120px;
@@ -10,18 +8,11 @@
   position: absolute;
   top: -207px;
   left: -232px;
-  text-shadow: -1px -1px 0
-  rgb(0, 0, 0), 1px -1px
-  0 rgb(0, 0, 0), -1px
-  1px 0 rgb(0, 0, 0),
-  -1px 1px 0 rgb(0, 0,
-                  0), 1px 1px 0 rgb(0,
-                  0, 0);
+  text-shadow: $text-shadow;
   font-family: $font1;
-}
-
-#can-buy:hover {
-  background-color: skyblue;
+  &:hover {
+    background-color: skyblue;
+  }
 }
 
 .canBuyContainer {
