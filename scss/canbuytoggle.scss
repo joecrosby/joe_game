@@ -11,7 +11,7 @@
   text-shadow: $text-shadow;
   font-family: $font1;
   &:hover {
-    background-color: skyblue;
+    background-color: $hover-color;
   }
 }
 

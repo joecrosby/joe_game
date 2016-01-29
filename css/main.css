@@ -50,6 +50,10 @@ li {
   position: relative;
   border: 3px solid black;
 }
+.image-container img {
+  width: 90%;
+  height: 73%;
+}
 
 .return {
   color: black;
@@ -98,11 +102,6 @@ li {
   font-weight: bold;
   right: -2px;
   top: -2px;
-}
-
-.image-container img {
-  width: 90%;
-  height: 73%;
 }
 
 button:hover:enabled {
