@@ -1,5 +1,7 @@
 // file to store css applicable to multiple elements
 
+@import "partials/variables";
+
 h2 {
 
   text-align: center;
@@ -51,6 +53,23 @@ li {
 
 }
 
+
+.disabledButton{
+
+  background-color: grey;
+  color:black;
+
+}
+
+.enabledButton{
+
+  background-color: blue;
+  color:white;
+  &hover:enabled{
+    background-color:$hover-color ;
+  }
+
+}
 
 
 

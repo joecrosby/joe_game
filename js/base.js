@@ -37,13 +37,17 @@
         canBuyButton = doc.getElementById(CAN_BUY_BUTTON);
        // BEERManagerButton = doc.getElementById(BEER_MANAGER_BUTTON);
 
+    var changeClass = function(elem,classToRemove,classToAdd){
+        elem.classList.remove(classToRemove);
+        elem.classList.add(classToAdd);
+    };
+
     var disableButton = function(id,doc = document){
 
         var disabledButton = doc.getElementById(id);
         disabledButton.setAttribute('disabled', 'disabled');
-        disabledButton.style.backgroundColor = "grey";
-        disabledButton.style.color = "black";
-
+        disabledButton.classList.remove('enabledButton');
+        disabledButton.classList.add('disabledButton');
         return disabledButton;
     };
 
@@ -52,8 +56,7 @@
         var enabledButton = doc.getElementById(id);
 
         enabledButton.removeAttribute('disabled');
-        enabledButton.style.color = "white";
-        enabledButton.style.backgroundColor = "blue";
+        changeClass(enabledButton,'disabledButton','enabledButton');
 
         return enabledButton;
 
@@ -62,7 +65,7 @@
     var disableReturnButton = function(id,doc = document){
 
         var disabledButton = doc.getElementById(id);
-        disabledButton.setAttribute('disabled', 'disabled');
+        disabledButton.setAttribute('disabled','disabled');
 
         return disabledButton;
     };
@@ -121,11 +124,12 @@
     //};
 
     var resetButtonStyle = function(){
-        buyButton.style.backgroundColor = "#665ab6";
+
+       changeClass(buyButton,'changeButtonStyleOnPress','resetButtonStyle');
     };
 
     var changeButtonStyleOnPress = function(){
-        buyButton.style.backgroundColor = "#6689f7";
+        changeClass(buyButton,'resetButtonStyle','changeButtonStyleOnPress');
         setTimeout(resetButtonStyle,250);
     };
 

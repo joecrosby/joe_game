@@ -38,6 +38,19 @@ li {
   width: 600px;
 }
 
+.disabledButton {
+  background-color: grey;
+  color: black;
+}
+
+.enabledButton {
+  background-color: blue;
+  color: white;
+}
+.enabledButtonhover:enabled {
+  background-color: #6689f7;
+}
+
 .image-container {
   height: 100px;
   width: 75px;
