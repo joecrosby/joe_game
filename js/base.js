@@ -46,8 +46,7 @@
 
         var disabledButton = doc.getElementById(id);
         disabledButton.setAttribute('disabled', 'disabled');
-        disabledButton.classList.remove('enabledButton');
-        disabledButton.classList.add('disabledButton');
+        changeClass(disabledButton,'enabledButton','disabledButton');
         return disabledButton;
     };
 
