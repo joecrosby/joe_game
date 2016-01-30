@@ -47,7 +47,7 @@ li {
   background-color: blue;
   color: white;
 }
-.enabledButtonhover:enabled {
+.enabledButton:hover:enabled {
   background-color: #6689f7;
 }
 
