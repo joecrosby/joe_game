@@ -65,7 +65,7 @@ li {
 
   background-color: blue;
   color:white;
-  &hover:enabled{
+  &:hover:enabled{
     background-color:$hover-color ;
   }
 
