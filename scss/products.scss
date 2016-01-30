@@ -58,6 +58,8 @@
   height: 40px;
   text-shadow: $text-shadow;
 
+
+
 }
 
 .stand-buy-text {
@@ -87,7 +89,7 @@
 
   button:hover:enabled {
 
-      background-color: rgb(102, 137, 247);
+      background-color:$hover-color;
 
     }
 
