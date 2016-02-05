@@ -27,7 +27,7 @@
         return parseFloat(doc.getElementById(id).innerHTML);
     };
 
-    var getElement = function(id, doc = document){
+    var getElement = function(id){
         return doc.getElementById(id);
     };
 
@@ -42,7 +42,7 @@
         elem.classList.add(classToAdd);
     };
 
-    var disableButton = function(id,doc = document){
+    var disableButton = function(id){
 
         var disabledButton = doc.getElementById(id);
         disabledButton.setAttribute('disabled', 'disabled');
@@ -50,7 +50,7 @@
         return disabledButton;
     };
 
-    var enableButton = function(id,doc = document){
+    var enableButton = function(id){
 
         var enabledButton = doc.getElementById(id);
 
@@ -61,7 +61,8 @@
 
     };
 
-    var disableReturnButton = function(id,doc = document){
+    var disableReturnButton = function(id){
+
 
         var disabledButton = doc.getElementById(id);
         disabledButton.setAttribute('disabled','disabled');
@@ -69,7 +70,7 @@
         return disabledButton;
     };
 
-    var enableReturnButton = function(id,doc = document){
+    var enableReturnButton = function(id){
 
         var enabledButton = doc.getElementById(id);
 
@@ -210,7 +211,9 @@
 
     };
 
-    var updateGrandTotalAfterPurchase = function(doc = document){
+    var updateGrandTotalAfterPurchase = function(){
+
+
 
         var grandTotalValue = getUseableValue(GRAND_TOTAL);
         var grandTotalSpan = getElement(GRAND_TOTAL);
@@ -303,7 +306,7 @@
 
     var resetTimer = function(){
 
-        return document.getElementById('return-timer').innerHTML = '00:00:00';
+        return doc.getElementById('return-timer').innerHTML = '00:00:00';
 
     };
 
@@ -353,9 +356,6 @@
                     enableButton(button2);
                 }
             }},1000);
-
-
-
         };
 
     if(!canBuyStand()){
@@ -364,7 +364,7 @@
 
     buyStand.addEventListener('click',function(){buyStandAction(getUseableValue(NO_OF_BEER_STANDS_CAN_BUY));});
     buyButton.addEventListener('click',produceReturnAction);
-    buyButton.addEventListener('click',function(){changeButtonStyleOnPress(doc);});
+    buyButton.addEventListener('click',function(){changeButtonStyleOnPress();});
     canBuyButton.addEventListener('click',cycleThroughCanBuyAmounts);
     //BEERManagerButton.addEventListener('click',function(){buyManagerAction(BEER_MANAGER_PRICE);});
 
