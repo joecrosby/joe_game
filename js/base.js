@@ -373,16 +373,17 @@
             if (classes) {
                 for (var x = 0; x < classes.length; x++) {
                     if (classes[x] == "buy-button") {
-
                         produceReturnAction();
                         changeButtonStyleOnPress();
+                    }
+                    if (classes[x] == "stand-button"){
 
+                        buyStandAction(getUseableValue(NO_OF_BEER_STANDS_CAN_BUY));
                     }
                 }
             }
         }
     });
-    buyStand.addEventListener('click',function(){buyStandAction(getUseableValue(NO_OF_BEER_STANDS_CAN_BUY));});
     canBuyButton.addEventListener('click',cycleThroughCanBuyAmounts);
     //BEERManagerButton.addEventListener('click',function(){buyManagerAction(BEER_MANAGER_PRICE);});
 
