@@ -383,8 +383,6 @@
         }
     });
     buyStand.addEventListener('click',function(){buyStandAction(getUseableValue(NO_OF_BEER_STANDS_CAN_BUY));});
-   // buyButton.addEventListener('click',produceReturnAction);
-   // buyButton.addEventListener('click',function(){changeButtonStyleOnPress();});
     canBuyButton.addEventListener('click',cycleThroughCanBuyAmounts);
     //BEERManagerButton.addEventListener('click',function(){buyManagerAction(BEER_MANAGER_PRICE);});
 
