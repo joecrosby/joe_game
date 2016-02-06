@@ -20,6 +20,7 @@
     //const BEER_MANAGER_BUTTON = 'beer-manager' ;
     //const BEER_MANAGER_PRICE = 'beer-manager-price';
     //const BEER_MANAGER_LIST_ITEM = 'beer-manager-list-item';
+    const PRODUCTS_LEFT = "products-left";
 
 
 
@@ -32,9 +33,12 @@
     };
 
     var doc = document,
-        buyButton = doc.getElementById(BEER_PRODUCE_BUTTON),
+        buyButton = doc.getElementById('beer'),
+
         buyStand = doc.getElementById(BEER_STAND_BUTTON),
-        canBuyButton = doc.getElementById(CAN_BUY_BUTTON);
+        canBuyButton = doc.getElementById(CAN_BUY_BUTTON),
+        productsLeft = doc.getElementById(PRODUCTS_LEFT);
+
        // BEERManagerButton = doc.getElementById(BEER_MANAGER_BUTTON);
 
     var changeClass = function(elem,classToRemove,classToAdd){
@@ -362,9 +366,25 @@
         disableButton(BEER_STAND_BUTTON);
     }
 
+
+    productsLeft.addEventListener('click',function(e) {
+        if (e.target && e.target.nodeName == "BUTTON") {
+            var classes = e.target.className.split(" ");
+            if (classes) {
+                for (var x = 0; x < classes.length; x++) {
+                    if (classes[x] == "buy-button") {
+
+                        produceReturnAction();
+                        changeButtonStyleOnPress();
+
+                    }
+                }
+            }
+        }
+    });
     buyStand.addEventListener('click',function(){buyStandAction(getUseableValue(NO_OF_BEER_STANDS_CAN_BUY));});
-    buyButton.addEventListener('click',produceReturnAction);
-    buyButton.addEventListener('click',function(){changeButtonStyleOnPress();});
+   // buyButton.addEventListener('click',produceReturnAction);
+   // buyButton.addEventListener('click',function(){changeButtonStyleOnPress();});
     canBuyButton.addEventListener('click',cycleThroughCanBuyAmounts);
     //BEERManagerButton.addEventListener('click',function(){buyManagerAction(BEER_MANAGER_PRICE);});
 

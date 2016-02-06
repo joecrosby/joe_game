@@ -21,7 +21,7 @@ span {
   padding: 2px;
 }
 
-div.products-left {
+div#products-left {
   height: 400px;
   width: 32%;
 }
