@@ -21,11 +21,6 @@ span {
   padding: 2px;
 }
 
-div#products-left {
-  height: 400px;
-  width: 32%;
-}
-
 li {
   list-style-type: none;
 }
@@ -112,7 +107,7 @@ li {
   color: white;
   position: absolute;
   font-weight: bold;
-  right: -2px;
+  right: 403px;
   top: -2px;
 }
 

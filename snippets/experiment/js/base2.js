@@ -3,6 +3,8 @@
  */
 (function() {
 
+    var doc = document;
+
 function Product(profit,standPrice,timer,id){
 
     //properties
@@ -21,20 +23,40 @@ function Product(profit,standPrice,timer,id){
 
     //methods for writing values to the HTML
     this.writeProfit = function(){
-      document.write(this.profit + " ");
+      doc.write(this.profit + " ");
     };
 
     this.writeStandPrice = function(){
-        document.write(this.standPrice + " ");
+        doc.write(this.standPrice + " ");
     };
 
     this.writeTimer = function(){
-        document.write(this.timer + " ");
+        doc.write(this.timer + " ");
     };
 
     this.writeId = function(){
-        document.write(this.id + " ");
+        doc.write(this.id + " ");
     };
+
+
+
+
+
+    this.createProduct = function(){
+
+        //create relevant elements
+
+
+
+
+        //assign relevant classes / id's - ensure class positions these items as float:left so they flow
+        //naturally
+
+        //feed in assigned relevant data using the above "getters"
+
+        //append to the body
+
+    }
 
   }
 
@@ -51,7 +73,7 @@ function Product(profit,standPrice,timer,id){
    var gold = new Product(1000,200,"15:00:00","gold");
 
   //write values to screen to test output
-   beer.init();
+  // beer.init();
 
 
 
@@ -85,8 +107,8 @@ function Product(profit,standPrice,timer,id){
         return doc.getElementById(id);
     };
 
-    var doc = document,
-        buyButton = doc.getElementById('beer'),
+
+    var buyButton = doc.getElementById('beer'),
 
         buyStand = doc.getElementById(BEER_STAND_BUTTON),
         canBuyButton = doc.getElementById(CAN_BUY_BUTTON),
