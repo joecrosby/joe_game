@@ -112,7 +112,7 @@ function Product(profit,standPrice,timer,id){
 
         buyStand = doc.getElementById(BEER_STAND_BUTTON),
         canBuyButton = doc.getElementById(CAN_BUY_BUTTON),
-        productsLeft = doc.getElementById(PRODUCTS_LEFT);
+        main = doc.getElementById("main");
 
     // BEERManagerButton = doc.getElementById(BEER_MANAGER_BUTTON);
 
@@ -442,7 +442,7 @@ function Product(profit,standPrice,timer,id){
     }
 
 
-    productsLeft.addEventListener('click',function(e) {
+    main.addEventListener('click',function(e) {
         if (e.target && e.target.nodeName == "BUTTON") {
             var classes = e.target.className.split(" ");
             if (classes) {

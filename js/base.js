@@ -20,7 +20,6 @@
     //const BEER_MANAGER_BUTTON = 'beer-manager' ;
     //const BEER_MANAGER_PRICE = 'beer-manager-price';
     //const BEER_MANAGER_LIST_ITEM = 'beer-manager-list-item';
-    const PRODUCTS_LEFT = "products-left";
 
 
 
@@ -37,7 +36,7 @@
 
         buyStand = doc.getElementById(BEER_STAND_BUTTON),
         canBuyButton = doc.getElementById(CAN_BUY_BUTTON),
-        productsLeft = doc.getElementById(PRODUCTS_LEFT);
+        main = doc.getElementById("main");
 
        // BEERManagerButton = doc.getElementById(BEER_MANAGER_BUTTON);
 
@@ -367,7 +366,7 @@
     }
 
 
-    productsLeft.addEventListener('click',function(e) {
+    main.addEventListener('click',function(e) {
         if (e.target && e.target.nodeName == "BUTTON") {
             var classes = e.target.className.split(" ");
             if (classes) {

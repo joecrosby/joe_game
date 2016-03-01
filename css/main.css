@@ -25,7 +25,7 @@ li {
   list-style-type: none;
 }
 
-.main {
+#main {
   position: relative;
   left: 265px;
   top: -204px;
