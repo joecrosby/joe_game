@@ -2,6 +2,7 @@
 
 @import "partials/variables";
 
+//remove all selectors which use html tags as selectors (within reason)
 h2 {
 
   text-align: center;
@@ -17,6 +18,7 @@ body {
 
 }
 
+//this needs to be changed to a class
 button {
 
   color: white;
@@ -25,12 +27,14 @@ button {
   cursor: pointer;
 }
 
+//as does this
 span {
 
   padding: 2px;
 
 }
 
+// as does this
 li {
 
   list-style-type: none;

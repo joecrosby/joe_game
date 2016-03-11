@@ -8,6 +8,7 @@
   width: 75px;
   margin: -24px 0 0 20px;
 
+  // put this in a class
   button {
 
     border-radius: 50%;
@@ -18,6 +19,8 @@
             0, 0);
 
   }
+
+  //put this in a class
   img {
 
     width: 90%;
@@ -86,7 +89,7 @@
   top: -2px;
 
 }
-
+  //put this in a class
   button:hover:enabled {
 
       background-color:$hover-color;
