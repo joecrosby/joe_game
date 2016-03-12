@@ -21,13 +21,13 @@ function Product(profit,standPrice,timer,id){
         productDiv.className = "product";
         mainDiv.appendChild(productDiv);
 
-        var returnParagraph = doc.createElement('p');
-        returnParagraph.className = "return";
-        returnParagraph.id = this.id;
-        returnParagraph.innerHTML = this.profit;
-        productDiv.appendChild(returnParagraph);
+        var returnSpan = doc.createElement('span');
+        returnSpan.className = "return";
+        returnSpan.id = this.id;
+        returnSpan.innerHTML = this.profit;
+        productDiv.appendChild(returnSpan);
 
-        var pressCount = doc.createElement('p');
+        var pressCount = doc.createElement('span');
         pressCount.style.display = "none";
         pressCount.className = "press-count";
         pressCount.innerHTML = "1";

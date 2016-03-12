@@ -17,13 +17,18 @@
 </div>
     <div class="grand-total">
         <p>£<span id="total">0.00</span> </p>
-    </div>
-    <div class="canBuyContainer">
+</div>
+<div class="canBuyContainer">
         <span id="can-buy-toggle" style="display: none">1</span>
         <button id="can-buy">Get <span id="can-buy-amount">x 1</span></button>
-    </div>
-    <div id="main">
-    <div class="product">
+</div>
+    <div id="main"> <!--this id needs to have a set width where all products can naturally flow 2 by 2 -->
+    <div class="product"><!-- this is the product container. all measurements need to be relative to this.
+    they will also need to float left so as to flow naturally. this also means that this div will have a set height and
+    width and no element contained within can exceed these. my advice? strip everything out and start with the container. get
+    an initial feel for the height and the width of each individual elements first. create a copy of the scss folder and the
+     main.css file so that you can experiment without messing up the original styles: the look is pretty much there but the
+     measurements are way off -->
     <p class="return" id="beer-profit">5.00</p>
     <p style="display: none">Press Count:<span id="press-count">1</span></p>
     <div class="image-container">
