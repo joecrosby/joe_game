@@ -65,7 +65,7 @@ li {
   line-height: 21px;
   background-color: grey;
   border: 2px solid black;
-  width: 269px;
+  width: 265px;
   height: 21px;
   margin-left: 75px;
 }
@@ -87,44 +87,6 @@ li {
   height: 73%;
 }
 
-.stand-button-area {
-  position: relative;
-  top: -70px;
-  left: 111px;
-}
-
-.stand-button {
-  margin-left: -1px;
-  width: 200px;
-  height: 40px;
-  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
-}
-
-.stand-buy-text {
-  color: white;
-  font-weight: bold;
-  position: absolute;
-  bottom: 0;
-  top: 0;
-  right: 0;
-  width: 43px;
-  left: -3px;
-  font-family: "Open Sans", serif;
-  font-size: 16px;
-}
-
-.stand-price {
-  color: white;
-  position: absolute;
-  font-weight: bold;
-  right: 403px;
-  top: -2px;
-}
-
-button:hover:enabled {
-  background-color: #6689f7;
-}
-
 .product-stand-count {
   text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
   border: 3px solid black;
@@ -143,13 +105,33 @@ button:hover:enabled {
   font-weight: bold;
 }
 
-.product-stand-can-buy {
+.stand-button-area {
+  position: relative;
+  left: 75px;
+  top: -15px;
+}
+
+.stand-button {
+  width: 200px;
+  height: 39px;
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+}
+
+.stand-buy-text {
   color: white;
   font-weight: bold;
-  position: fixed;
-  left: -1101px;
-  top: 134px;
-  bottom: -54px;
+  width: 43px;
+  font-family: "Open Sans", serif;
+  font-size: 16px;
+}
+
+.stand-price {
+  color: white;
+  font-weight: bold;
+}
+
+button:hover:enabled {
+  background-color: #6689f7;
 }
 
 .timer {
@@ -160,23 +142,18 @@ button:hover:enabled {
   color: white;
   font-weight: bold;
   line-height: 34px;
-  left: 200px;
-  top: -40px;
+  left: 199px;
+  top: -39px;
   width: 66px;
   height: 36px;
   text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
 }
 
 .stand-can-buy {
-  position: absolute;
-  bottom: 41px;
   color: white;
   font-weight: bold;
   height: 37px;
-  top: 18px;
-  left: 2px;
   text-align: left;
-  right: 0;
 }
 
 .price-in-illions {

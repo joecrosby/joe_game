@@ -18,7 +18,7 @@
   line-height: 21px;
   background-color: grey;
   border: 2px solid black;
-  width: 269px;
+  width: 265px;
   height: 21px;
   margin-left:75px;
 }
@@ -27,8 +27,8 @@
 
   height: 100px;
   width: 75px;
-  position:absolute;
-  top:20px;
+  position: absolute;
+  top: 20px;
 
   // put this in a class
   button {
@@ -46,21 +46,49 @@
   }
 }
 
-.stand-button-area {
+.product-stand-count {
+
+  text-shadow: $text-shadow;
+  border: 3px solid black;
+  color: white;
+  width: 68px;
+  text-align: center;
+  border-radius: 20%;
+  top:80px;
+  position: absolute;
+  height: 14px;
+  background-color: blue;
+
+}
+
+//this is a hardcoded id. this cannot be
+#beer-stand-count {
+  margin-top: -3px;
+  font-weight: bold;
+}
+
+//.stand-button-area {
+//
+//  position: relative;
+//  top: -70px;
+//  left: 111px;
+//
+//}
+
+.stand-button-area{
 
   position: relative;
-  //same here
-  top: -70px;
-  left: 111px;
+  left: 75px;
+  top: -15px
 
 }
 
 .stand-button {
 
   //same here
-  margin-left: -1px;
+ // margin-left: -1px;
   width: 200px;
-  height: 40px;
+  height: 39px;
   text-shadow: $text-shadow;
 
 }
@@ -69,13 +97,13 @@
 
   color: white;
   font-weight: bold;
-  position: absolute;
-  //same here: width is fine but other measurements are not
-  bottom: 0;
-  top: 0;
-  right: 0;
+  //position: absolute;
+  ////same here: width is fine but other measurements are not
+  //bottom: 0;
+  //top: 0;
+  //right: 0;
   width: 43px;
-  left: -3px;
+  //left: -3px;
   font-family: $font1;
   font-size: 16px;
 
@@ -86,53 +114,20 @@
   color: white;
 
   // these position rules need to be reviewed
-  position: absolute;
+  //position: absolute;
   font-weight: bold;
 
   //these 2 need to be modified or removed
-  right: 403px;
-  top: -2px;
+  //right: 403px;
+  //top: -2px;
 
 }
   //put this in a class
   button:hover:enabled {
 
-      background-color:$hover-color;
+      background-color: $hover-color;
 
     }
-
-  .product-stand-count {
-
-    text-shadow: $text-shadow;
-    border: 3px solid black;
-    color: white;
-    width: 68px;
-    text-align: center;
-    border-radius: 20%;
-    top:80px;
-    position: absolute;
-    height: 14px;
-    background-color: blue;
-
-  }
-
-  #beer-stand-count {
-    margin-top: -3px;
-    font-weight: bold;
-  }
-
-  .product-stand-can-buy {
-
-    color: white;
-    font-weight: bold;
-
-    // all the properties below will need to be modified if multiple products are to exist. this is way too specific
-    position: fixed;
-    left: -1101px;
-    top: 134px;
-    bottom: -54px;
-
-  }
 
   .timer {
 
@@ -145,8 +140,8 @@
     line-height: 34px;
 
     //left and top will need to be reviewed
-    left: 200px;
-    top: -40px;
+    left: 199px;
+    top: -39px;
     width: 66px;
     height: 36px;
     text-shadow: $text-shadow;
@@ -155,18 +150,18 @@
 
   .stand-can-buy {
 
-    position: absolute;
+   // position: absolute;
     //and this
-    bottom: 41px;
+   // bottom: 41px;
     color: white;
     font-weight: bold;
     height: 37px;
     //and the 2 below
-    top: 18px;
-    left: 2px;
+    //top: 18px;
+    //left: 2px;
     text-align: left;
     //and this one
-    right: 0;
+    //right: 0;
 
   }
 
