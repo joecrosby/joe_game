@@ -28,9 +28,11 @@ li {
 
 #main {
   position: relative;
-  left: 265px;
+  left: 275px;
   top: -204px;
-  width: 600px;
+  width: 800px;
+  height: 500px;
+  border: red solid 3px;
 }
 
 .disabledButton {
@@ -48,21 +50,12 @@ li {
   cursor: pointer;
 }
 
-.image-container {
-  height: 100px;
-  width: 75px;
-  margin: -24px 0 0 20px;
-}
-.image-container button {
-  border-radius: 50%;
-  background-color: #665ab6;
-  height: 72px;
-  position: relative;
-  border: 3px solid black;
-}
-.image-container img {
-  width: 90%;
-  height: 73%;
+.product {
+  border: green solid 3px;
+  width: 350px;
+  height: 90px;
+  float: left;
+  margin: 10px 30px 10px 10px;
 }
 
 .return {
@@ -72,12 +65,26 @@ li {
   line-height: 21px;
   background-color: grey;
   border: 2px solid black;
-  position: absolute;
   width: 269px;
-  margin: 0;
-  top: 6px;
-  left: 109px;
   height: 21px;
+  margin-left: 75px;
+}
+
+.image-container {
+  height: 100px;
+  width: 75px;
+  position: absolute;
+  top: 20px;
+}
+.image-container button {
+  border-radius: 50%;
+  background-color: #665ab6;
+  height: 72px;
+  border: 3px solid black;
+}
+.image-container img {
+  width: 90%;
+  height: 73%;
 }
 
 .stand-button-area {
@@ -125,7 +132,7 @@ button:hover:enabled {
   width: 68px;
   text-align: center;
   border-radius: 20%;
-  margin: -44px 0 0 22px;
+  top: 80px;
   position: absolute;
   height: 14px;
   background-color: blue;
