@@ -104,11 +104,6 @@ li {
   background-color: blue;
 }
 
-#beer-stand-count {
-  margin-top: -3px;
-  font-weight: bold;
-}
-
 .stand-button-area {
   position: relative;
   left: 75px;
