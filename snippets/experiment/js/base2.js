@@ -32,9 +32,6 @@ function Product(profit,standPrice,timer,id){
 
         var imageContainer = doc.createElement('div');
 
-        //assign relevant classes / id's - ensure class positions these items as float:left so they flow
-        //naturally
-
         //feed in assigned relevant data using the above "getters"
 
 
@@ -42,7 +39,6 @@ function Product(profit,standPrice,timer,id){
 
   }
 
-   //createProductialise product objects
    var beer = new Product(1,4,"00:00:02","beer");
    var car = new Product(10,15,"00:00:10","car");
    var rocket = new Product(20,17,"00:00:30","rocket");
