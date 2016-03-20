@@ -6,50 +6,30 @@
     <title>Joe game</title>
 </head>
 <body>
-<div class="side-bar">
-    <ul>
-        <li><button class="menu-buttons">Stats</button></li>
-        <li><button class="menu-buttons">Level up</button></li>
-        <li><button class="menu-buttons">Multiply</button></li>
-        <li><button class="menu-buttons"> Auto-clickers</button></li>
-        <li><button class="menu-buttons">Backers</button></li>
-    </ul>
-</div>
-    <div class="grand-total">
-        <p>£<span id="total">0.00</span> </p>
+<div class="grand-total">
+    <p>£<span id="total">0.00</span> </p>
 </div>
 <div class="canBuyContainer">
-        <span id="can-buy-toggle" style="display: none">1</span>
-        <button id="can-buy">Get <span id="can-buy-amount">x 1</span></button>
+    <span id="can-buy-toggle" style="display:none">1</span>
+    <button id="can-buy">Get <span id="can-buy-amount">x 1</span></button>
 </div>
-    <div id="main"> <!--this id needs to have a set width where all products can naturally flow 2 by 2 -->
-    <div class="product"><!-- this is the product container. all measurements need to be relative to this.
-    they will also need to float left so as to flow naturally. this also means that this div will have a set height and
-    width and no element contained within can exceed these. my advice? strip everything out and start with the container. get
-    an initial feel for the height and the width of each individual elements first. create a copy of the scss folder and the
-     main.css file so that you can experiment without messing up the original styles: the look is pretty much there but the
-     measurements are way off -->
-    <p class="return" id="beer-profit">5.00</p>
-    <p style="display: none">Press Count:<span id="press-count">1</span></p>
-    <div class="image-container">
-    <button id="beer" class="buy-button"><img src="./images/beer.jpe"></button>
+<div class="side-bar">
+    <div id="avatar">
+     <img src="./images/male-avatar.jpg" />
+    </div>
+    <nav>
+        <ul id="menu-container">
+            <li><button class="menu-buttons">Stats</button></li>
+            <li><button class="menu-buttons">Level up</button></li>
+            <li><button class="menu-buttons">Multiply</button></li>
+            <li><button class="menu-buttons">Auto-clickers</button></li>
+            <li><button class="menu-buttons">Backers</button></li>
+        </ul>
+    </nav>
 </div>
-    <div class="product-stand-count">
-    <p id="beer-stand-count">1</p>
+    <div id="main">
+
     </div>
-    <div class="stand-button-area">
-        <button class="stand-button" id="beer-stand">
-            <span class="stand-buy-text">Get x</span>
-            <span id="beer-stand-can-buy" class="stand-can-buy">1</span>
-            <span id="beer-stand-price" class="stand-price">4.00</span>
-        </button>
-        <div class="timer">
-            <span id="return-timer">00:00:02</span>
-        </div>
-      </div>
-    </div>
-  </div>
 <script src="./js/base.js"></script>
-<!-- this will be to include the hard-coded data for products, can include this once it is complete <script src="./js/JSONdata.js"></script>-->
 </body>
 </html>

@@ -1,25 +1,120 @@
 (function() {
 
-    //@TODO come up with a way of calculating how much 10/100/(however many you can afford) stands into the future will cost (see calculateNextValue() method)
+    var doc = document;
 
-//prices
-    const BEERS_PRICE = 5.00;
+    function Product(profit,standPrice,timer,id){
 
-//elements
-    const CAN_BUY_TOGGLE_VALUE = 'can-buy-toggle';
-    const CAN_BUY_AMOUNT = 'can-buy-amount';
-    const BEER_STAND_BUTTON ='beer-stand';
-    const BEER_PRODUCE_BUTTON ='beer' ;
-    const CAN_BUY_BUTTON = 'can-buy';
-    const BEERS_RETURN = 'beer-profit';
-    const BEER_STAND_COUNT = 'beer-stand-count';
-    const BEER_STAND_PRICE = 'beer-stand-price';
-    const PRESS_COUNT =  'press-count';
-    const NO_OF_BEER_STANDS_CAN_BUY = 'beer-stand-can-buy';
-    const GRAND_TOTAL = 'total';
-    //const BEER_MANAGER_BUTTON = 'beer-manager' ;
-    //const BEER_MANAGER_PRICE = 'beer-manager-price';
-    //const BEER_MANAGER_LIST_ITEM = 'beer-manager-list-item';
+        //properties
+        this.profit = profit.toFixed(2);
+        this.standPrice = standPrice.toFixed(2);
+        this.timer = timer;
+        this.id = id;
+
+        this.createProduct = function(){
+
+            //create div with correct id and append to relevant div
+            var mainDiv = doc.getElementById('main'),
+                productDiv = doc.createElement('div');
+            productDiv.className = "product";
+            mainDiv.appendChild(productDiv);
+
+            var returnSpan = doc.createElement('p');
+            returnSpan.className = "return";
+            returnSpan.id = this.id;
+            returnSpan.innerHTML = this.profit;
+            productDiv.appendChild(returnSpan);
+
+            //is this needed anymore? could track this within the object itself?
+            var pressCount = doc.createElement('span');
+            pressCount.style.display = "none";
+            pressCount.className = "press-count";
+            pressCount.innerHTML = "1";
+            productDiv.appendChild(pressCount);
+
+            var imageContainer = doc.createElement('div');
+            imageContainer.className = "image-container";
+            productDiv.appendChild(imageContainer);
+
+            var buyButton = doc.createElement('button');
+            buyButton.className = "buy-button";
+            buyButton.id = this.id;
+            imageContainer.appendChild(buyButton);
+
+            var productImage = doc.createElement('img');
+            //this needs to be a constructor argument rather than a hardcoded path
+            productImage.src = "./images/beer.jpe";
+            buyButton.appendChild(productImage);
+
+            var productStandCountDiv = doc.createElement('div');
+            productStandCountDiv.className = "product-stand-count-div";
+            productDiv.appendChild(productStandCountDiv);
+
+            var productStandCount = doc.createElement('p');
+            productStandCount.className = "product-stand-count";
+            productStandCount.innerHTML = "1";
+            productStandCountDiv.appendChild(productStandCount);
+
+            var standButtonArea = doc.createElement('div');
+            standButtonArea.className = "stand-button-area";
+            productDiv.appendChild(standButtonArea);
+
+            var standButton = doc.createElement('button');
+            standButton.className = "stand-button";
+            standButton.id = this.id + "-stand";
+            standButtonArea.appendChild(standButton);
+
+            var standBuyTextSpan = doc.createElement('span');
+            standBuyTextSpan.className = "stand-buy-text";
+            standBuyTextSpan.innerHTML = "Get x";
+            standButton.appendChild(standBuyTextSpan);
+
+            var standCanBuySpan = doc.createElement('span');
+            standCanBuySpan.className = "stand-can-buy";
+            standCanBuySpan.id = "beer-stand-can-buy";
+            standCanBuySpan.innerHTML = "1";
+            standButton.appendChild(standCanBuySpan);
+
+            var standPriceSpan = doc.createElement('span');
+            standPriceSpan.className = "stand-price";
+            standPriceSpan.id = "beer-stand-price";
+            standPriceSpan.innerHTML = this.standPrice;
+            standButton.appendChild(standPriceSpan);
+
+            var timerDiv = doc.createElement('div');
+            timerDiv.className = "timer";
+            productDiv.appendChild(timerDiv);
+
+            var returnTimerSpan = doc.createElement("span");
+            returnTimerSpan.id = "return-timer";
+            returnTimerSpan.innerHTML = this.timer;
+            timerDiv.appendChild(returnTimerSpan);
+
+
+        }
+
+    }
+
+    var beer = new Product(1,4,"00:00:02","beer");
+    var car = new Product(10,15,"00:00:10","car");
+    var rocket = new Product(20,17,"00:00:30","rocket");
+    var bank = new Product(600,150,"10:00:00","bank");
+    var computers = new Product(450,50,"00:30:00","computers");
+    var telephone = new Product(200,40,"00:10:00","telephone");
+    var printers = new Product(100,30,"00:02:00","printers");
+    var shrimp = new Product(75,22,"00:01:10","shrimp");
+    var mushroom = new Product(30,10,"00:00:05","mushroom");
+    var gold = new Product(1333000,200,"15:00:00","gold");
+
+    beer.createProduct();
+    car.createProduct();
+    rocket.createProduct();
+    bank.createProduct();
+    computers.createProduct();
+    telephone.createProduct();
+    printers.createProduct();
+    shrimp.createProduct();
+    mushroom.createProduct();
+    gold.createProduct();
 
 
 
@@ -31,12 +126,12 @@
         return doc.getElementById(id);
     };
 
-    var doc = document,
-        buyButton = doc.getElementById('beer'),
 
-        buyStand = doc.getElementById(BEER_STAND_BUTTON),
-        canBuyButton = doc.getElementById(CAN_BUY_BUTTON),
-        main = doc.getElementById("main");
+    var buyButton = doc.getElementById('beer'),
+
+    buyStand = doc.getElementById(BEER_STAND_BUTTON),
+    canBuyButton = doc.getElementById(CAN_BUY_BUTTON),
+    main = doc.getElementById("main");
 
        // BEERManagerButton = doc.getElementById(BEER_MANAGER_BUTTON);
 
