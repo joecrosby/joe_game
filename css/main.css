@@ -133,6 +133,10 @@ li {
 .stand-price {
   color: white;
   font-weight: bold;
+  position: absolute;
+  right: 150px;
+  top: 0;
+  z-index: 1;
 }
 
 button:hover:enabled {
@@ -158,19 +162,20 @@ button:hover:enabled {
   color: white;
   font-weight: bold;
   height: 37px;
-  text-align: left;
+  position: absolute;
+  left: 10px;
+  top: 17px;
 }
 
 .price-in-illions {
   position: absolute;
-  top: 11px;
-  left: 95px;
-  font-weight: bold;
-  color: black;
-  font-size: 9px;
-  margin-left: 0;
-  right: 63px;
-  text-align: right;
+  top: 17px;
+  left: 139px;
+  color: white;
+  font-size: 12px;
+  font-family: "Open Sans", serif;
+  right: 133px;
+  z-index: 1;
 }
 
 .side-bar {
