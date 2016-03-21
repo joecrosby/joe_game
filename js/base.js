@@ -10,11 +10,11 @@
         this.timer = timer;
         this.id = id;
 
+        //this entire function will need refactoring eventually. it repeats way too much
         this.createProduct = function(){
 
-            //create div with correct id and append to relevant div
             var mainDiv = doc.getElementById('main'),
-                productDiv = doc.createElement('div');
+            productDiv = doc.createElement('div');
             productDiv.className = "product";
             mainDiv.appendChild(productDiv);
 
