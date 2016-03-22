@@ -1,20 +1,31 @@
 (function() {
 
     var doc = document;
-    var buyButton,
+    var buyButton = doc.getElementsByClassName("buy-button"),
         buyStand,
-        canBuyButton,
-        main ;
+        canBuyButton = doc.getElementById("can-buy"),
+        main = doc.getElementById("main");
 
+    //path to product images
     const PRODUCT_IMAGES_FOLDER = "./images/products/";
 
-    function Product(profit,standPrice,timer,id,image){
+    //id's/classes for common elements
+    const CAN_BUY_TOGGLE_VALUE = 'can-buy-toggle';
+    const CAN_BUY_AMOUNT = 'can-buy-amount';
+    const CAN_BUY_BUTTON = 'can-buy';
+    //(press count may or may not be required)
+    const PRESS_COUNT =  'press-count';
+    const GRAND_TOTAL = 'total';
+
+
+    function Product(profit,standPrice,timer,id,image,counter){
 
         //properties
         this.profit = profit.toFixed(2);
         this.standPrice = standPrice.toFixed(2);
         this.timer = timer;
         this.id = id;
+        this.counter = counter;
 
         //this entire function will need refactoring eventually. it repeats way too much
         this.createProduct = function(){
@@ -97,20 +108,25 @@
             timerDiv.appendChild(returnTimerSpan);
 
 
+        };
+
+        this.getCounter = function(){
+
+          return this.counter;
         }
 
     }
 
-    var beer = new Product(1,4,"00:00:02","beer");
-    var car = new Product(10,15,"00:00:10","car");
-    var rocket = new Product(20,17,"00:00:30","rocket");
-    var bank = new Product(600,150,"10:00:00","bank");
-    var computers = new Product(450,50,"00:30:00","computers");
-    var telephone = new Product(200,40,"00:10:00","telephone");
-    var printers = new Product(100,30,"00:02:00","printers");
-    var shrimp = new Product(75,22,"00:01:10","shrimp");
-    var mushroom = new Product(30,10,"00:00:05","mushroom");
-    var gold = new Product(1333000,200,"15:00:00","gold");
+    var beer = new Product(1,4,"00:00:02","beer",1);
+    var car = new Product(10,15,"00:00:10","car",1);
+    var rocket = new Product(20,17,"00:00:30","rocket",1);
+    var bank = new Product(600,150,"10:00:00","bank",1);
+    var computers = new Product(450,50,"00:30:00","computers",1);
+    var telephone = new Product(200,40,"00:10:00","telephone",1);
+    var printers = new Product(100,30,"00:02:00","printers",1);
+    var shrimp = new Product(75,22,"00:01:10","shrimp",1);
+    var mushroom = new Product(30,10,"00:00:05","mushroom",1);
+    var gold = new Product(1333000,200,"15:00:00","gold",1);
 
     beer.createProduct();
     car.createProduct();
@@ -125,24 +141,24 @@
 
 
 
-    var getUseableValue = function(id){
-        return parseFloat(doc.getElementById(id).innerHTML);
+    var getUseableValue = function(className){
+        return parseFloat(doc.getElementsByClassName(className).innerHTML);
     };
 
-    var getElement = function(id){
-        return doc.getElementById(id);
+    var getElement = function(className){
+        return doc.getElementsByClassName(className);
     };
 
-    var changeClass = function(elem,classToRemove,classToAdd){
-        elem.classList.remove(classToRemove);
-        elem.classList.add(classToAdd);
-    };
+    //var changeClass = function(elem,classToRemove,classToAdd){
+    //    elem.classList.remove(classToRemove);
+    //    elem.classList.add(classToAdd);
+    //};
 
     var disableButton = function(id){
 
         var disabledButton = doc.getElementById(id);
         disabledButton.setAttribute('disabled', 'disabled');
-        changeClass(disabledButton,'enabledButton','disabledButton');
+        //changeClass(disabledButton,'enabledButton','disabledButton');
         return disabledButton;
     };
 
@@ -151,7 +167,7 @@
         var enabledButton = doc.getElementById(id);
 
         enabledButton.removeAttribute('disabled');
-        changeClass(enabledButton,'disabledButton','enabledButton');
+       // changeClass(enabledButton,'disabledButton','enabledButton');
 
         return enabledButton;
 
@@ -221,20 +237,21 @@
 
     var resetButtonStyle = function(){
 
-       changeClass(buyButton,'changeButtonStyleOnPress','resetButtonStyle');
+       //changeClass(buyButton,'changeButtonStyleOnPress','resetButtonStyle');
     };
 
     var changeButtonStyleOnPress = function(){
-        changeClass(buyButton,'resetButtonStyle','changeButtonStyleOnPress');
-        setTimeout(resetButtonStyle,250);
+        //changeClass(buyButton,'resetButtonStyle','changeButtonStyleOnPress');
+        //setTimeout(resetButtonStyle,250);
     };
 
     var canBuyStand = function(){
 
-        var grandTotalValue = getUseableValue(GRAND_TOTAL),
-            BeerStandPriceValue = getUseableValue(BEER_STAND_PRICE);
+        var grandTotalValue = getUseableValue(GRAND_TOTAL);
+        //StandPriceValue = (need to get the class of this element, not the id;
 
-        return grandTotalValue >= BeerStandPriceValue;
+        //amend later if this can be reused at all
+        //return grandTotalValue >= BeerStandPriceValue;
     };
 
     var resetPressCount = function(){
@@ -244,8 +261,8 @@
 
     var cycleThroughToggleValues = function(){
 
-        var toggleValue = getUseableValue(CAN_BUY_TOGGLE_VALUE);
-        var nextToggleValue = getElement(CAN_BUY_TOGGLE_VALUE);
+        var toggleValue = getUseableValue("can-buy-toggle");
+        var nextToggleValue = getElement("can-buy-toggle");
         nextToggleValue.innerHTML = toggleValue + 1;
 
         if(toggleValue === 3) {
@@ -259,31 +276,31 @@
 
     var modifyBuyStandValue = function(){
 
-        var standButtonSpan = getElement(NO_OF_BEER_STANDS_CAN_BUY);
+       // var standButtonSpan = (if this function can be reused, it will be the class not the id)
         var canBuyText = getElement(CAN_BUY_AMOUNT).innerHTML;
 
-        switch(canBuyText){
-            case "x 10":
-                standButtonSpan.innerHTML = 10;
-                break;
-            case "x 100":
-                standButtonSpan.innerHTML = 100;
-                break;
-            //case "Max":
-            //    //(this should be converted to a function)
-            //    standButtonSpan.innerHTML = "Max";
-            //    break;
-            case "x 1":
-                standButtonSpan.innerHTML= 1;
-                break;
-            default:
-                standButtonSpan.innerHTML= 1;
-        }
+        //switch(canBuyText){
+        //    case "x 10":
+        //        standButtonSpan.innerHTML = 10;
+        //        break;
+        //    case "x 100":
+        //        standButtonSpan.innerHTML = 100;
+        //        break;
+        //    //case "Max":
+        //    //    //(this should be converted to a function)
+        //    //    standButtonSpan.innerHTML = "Max";
+        //    //    break;
+        //    case "x 1":
+        //        standButtonSpan.innerHTML= 1;
+        //        break;
+        //    default:
+        //        standButtonSpan.innerHTML= 1;
+        //}
     };
 
     var cycleThroughCanBuyAmounts = function(){
 
-        var canBuySpan  = getElement(CAN_BUY_AMOUNT);
+        var canBuySpan  = getElement("can-buy-amount");
         var buttonPress = cycleThroughToggleValues();
 
         switch(buttonPress){
@@ -303,7 +320,7 @@
                 canBuySpan.innerHTML=1;
         }
 
-        modifyBuyStandValue();
+        //modifyBuyStandValue();
 
     };
 
@@ -313,67 +330,65 @@
 
         var grandTotalValue = getUseableValue(GRAND_TOTAL);
         var grandTotalSpan = getElement(GRAND_TOTAL);
-        var beerStandPriceValue = getUseableValue(BEER_STAND_PRICE);
-        var GrandTotalAfterStandPurchase = grandTotalValue - beerStandPriceValue;
-        grandTotalSpan.innerHTML = GrandTotalAfterStandPurchase.toFixed(2);
+       // var beerStandPriceValue = getUseableValue(BEER_STAND_PRICE);
+        //var GrandTotalAfterStandPurchase = grandTotalValue - beerStandPriceValue;
+       // grandTotalSpan.innerHTML = GrandTotalAfterStandPurchase.toFixed(2);
 
-        if (!canBuyStand()){
-            disableButton(BEER_STAND_BUTTON);
-        }
+        //if (!canBuyStand()){
+        //    disableButton(BEER_STAND_BUTTON);
+        //}
     };
 
     var updateReturnValue = function(){
 
-        var beerStandCount = getUseableValue(BEER_STAND_COUNT);
-        var beerReturnSpan = getElement(BEERS_RETURN);
-
-        beerReturnSpan.innerHTML = (BEERS_PRICE * beerStandCount).toFixed(2);
+        //var beerStandCount = getUseableValue(BEER_STAND_COUNT);
+        //var beerReturnSpan = getElement(BEERS_RETURN);
+        //
+        //beerReturnSpan.innerHTML = (BEERS_PRICE * beerStandCount).toFixed(2);
 
     };
 
     var updateStandPrice = function(){
-
-        var standPriceSpan = getElement(BEER_STAND_PRICE);
-        var standPrice = getUseableValue(BEER_STAND_PRICE);
-        var standPerc = 15 / 100;
-        var standPercValue = standPrice * standPerc;
-
-        standPriceSpan.innerHTML = (standPrice + standPercValue).toFixed(2);
+        //
+        //var standPriceSpan = getElement(BEER_STAND_PRICE);
+        //var standPrice = getUseableValue(BEER_STAND_PRICE);
+        //var standPerc = 15 / 100;
+        //var standPercValue = standPrice * standPerc;
+        //
+        //standPriceSpan.innerHTML = (standPrice + standPercValue).toFixed(2);
 
     };
 
     var incrementPressCount = function(){
 
-        var pressCountSpan = getElement(PRESS_COUNT);
-        var pressCountValue = getUseableValue(PRESS_COUNT);
+       return beer.getCounter() + 1;
 
-        pressCountSpan.innerHTML = pressCountValue + 1;
     };
 
     var buyStandAction = function(quantity){
 
-        var beerStandsCount = getUseableValue(BEER_STAND_COUNT);
-        var beerStandsSpan = getElement(BEER_STAND_COUNT);
-
-        beerStandsSpan.innerHTML = beerStandsCount + quantity;
-        updateReturnValue();
-        resetPressCount();
-        updateGrandTotalAfterPurchase();
-        updateStandPrice();
+        //var beerStandsCount = getUseableValue(BEER_STAND_COUNT);
+        //var beerStandsSpan = getElement(BEER_STAND_COUNT);
+        //
+        //beerStandsSpan.innerHTML = beerStandsCount + quantity;
+        //updateReturnValue();
+        //resetPressCount();
+        //updateGrandTotalAfterPurchase();
+        //updateStandPrice();
         //canBuyManager(BEER_MANAGER_PRICE,BEER_MANAGER_BUTTON);
     };
 
     var produceReturnAction = function(){
 
         incrementPressCount();
-
-        countdown(BEER_PRODUCE_BUTTON,BEER_STAND_BUTTON);
-
-        if(canBuyStand()){
-            enableButton(BEER_STAND_BUTTON);
-        }else{
-            disableButton(BEER_STAND_BUTTON);
-        }
+        //
+        //countdown(BEER_PRODUCE_BUTTON,BEER_STAND_BUTTON);
+        //
+        //if(canBuyStand()){
+        //    enableButton(BEER_STAND_BUTTON);
+        //}else{
+        //    disableButton(BEER_STAND_BUTTON);
+        //}
 
         //canBuyManager(BEER_MANAGER_PRICE,BEER_MANAGER_BUTTON);
 
@@ -402,7 +417,7 @@
 
     var resetTimer = function(){
 
-        return doc.getElementById('return-timer').innerHTML = '00:00:00';
+        //return doc.getElementById('return-timer').innerHTML = '00:00:00';
 
     };
 
@@ -433,30 +448,30 @@
 
             timerSpan.innerHTML = hours +':' + minutes + ':' + --seconds;
 
-            disableReturnButton(button);
+            //disableReturnButton(button);
 
             if(hours === 0 && minutes === 0 && seconds === 0 ){
 
               clearInterval(interval);
-              enableReturnButton(button);
+              //enableReturnButton(button);
                 var total = getUseableValue(GRAND_TOTAL);
-                var BEERReturn = getUseableValue(BEERS_RETURN);
+               // var BEERReturn = getUseableValue(BEERS_RETURN);
                 var totalSpan = getElement(GRAND_TOTAL);
 
-                totalSpan.innerHTML = (total + BEERReturn).toFixed(2);
-                timerSpan.innerHTML = useableTime;
+               // totalSpan.innerHTML = (total + BEERReturn).toFixed(2);
+               // timerSpan.innerHTML = useableTime;
 
-                if(!canBuyStand()){
-                    disableButton(button2);
-                }else{
-                    enableButton(button2);
-                }
+                //if(!canBuyStand()){
+                //    disableButton(button2);
+                //}else{
+                //    enableButton(button2);
+                //}
             }},1000);
         };
 
-    if(!canBuyStand()){
-        disableButton(BEER_STAND_BUTTON);
-    }
+    //if(!canBuyStand()){
+    //    disableButton(BEER_STAND_BUTTON);
+    //}
 
 
     main.addEventListener('click',function(e) {
@@ -465,12 +480,12 @@
             if (classes) {
                 for (var x = 0; x < classes.length; x++) {
                     if (classes[x] == "buy-button") {
-                        produceReturnAction();
-                        changeButtonStyleOnPress();
+                      produceReturnAction();
+                      changeButtonStyleOnPress();
                     }
                     if (classes[x] == "stand-button"){
 
-                        buyStandAction(getUseableValue(NO_OF_BEER_STANDS_CAN_BUY));
+                       // buyStandAction(getUseableValue(NO_OF_BEER_STANDS_CAN_BUY));
                     }
                 }
             }
@@ -481,6 +496,7 @@
 
     //canBuyManager(BEER_MANAGER_PRICE,BEER_MANAGER_BUTTON);
 
+    console.log(beer.getCounter());
 
 
 })();
