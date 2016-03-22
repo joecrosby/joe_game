@@ -1,8 +1,14 @@
 (function() {
 
     var doc = document;
+    var buyButton,
+        buyStand,
+        canBuyButton,
+        main ;
 
-    function Product(profit,standPrice,timer,id){
+    const PRODUCT_IMAGES_FOLDER = "./images/products/";
+
+    function Product(profit,standPrice,timer,id,image){
 
         //properties
         this.profit = profit.toFixed(2);
@@ -42,7 +48,8 @@
 
             var productImage = doc.createElement('img');
             //this needs to be a constructor argument rather than a hardcoded path
-            productImage.src = "./images/beer.jpe";
+            productImage.src = PRODUCT_IMAGES_FOLDER + this.id + ".jpe";
+            productImage.alt = this.id;
             buyButton.appendChild(productImage);
 
             var productStandCountDiv = doc.createElement('div');
@@ -125,15 +132,6 @@
     var getElement = function(id){
         return doc.getElementById(id);
     };
-
-
-    var buyButton = doc.getElementById('beer'),
-
-    buyStand = doc.getElementById(BEER_STAND_BUTTON),
-    canBuyButton = doc.getElementById(CAN_BUY_BUTTON),
-    main = doc.getElementById("main");
-
-       // BEERManagerButton = doc.getElementById(BEER_MANAGER_BUTTON);
 
     var changeClass = function(elem,classToRemove,classToAdd){
         elem.classList.remove(classToRemove);
@@ -482,6 +480,8 @@
     //BEERManagerButton.addEventListener('click',function(){buyManagerAction(BEER_MANAGER_PRICE);});
 
     //canBuyManager(BEER_MANAGER_PRICE,BEER_MANAGER_BUTTON);
+
+
 
 })();
 
