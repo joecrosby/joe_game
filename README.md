@@ -9,6 +9,6 @@ press the beer button to make money. when you have enough, buy some more beer st
 
 Aim is to write it all in plain JavaScript. styling using SCSS
 
-more products and features will be added soon. In the meantime, feel free to grab a fork and dig in. Any contributions welcome.
+More products and features will be added soon. In the meantime, feel free to grab a fork and dig in. Any contributions welcome.
 
 
