@@ -1,4 +1,4 @@
-for  calc:
+for  basic calc:
 
 calc how much each product makes per second then add them all up to get to the grand total.
 this will also allow you to calculate how much was made while you were away from the game also.
