@@ -1,119 +1,126 @@
-(function() {
 
-    var doc = document;
-    var buyButton = doc.getElementsByClassName("buy-button"),
-        buyStand,
-        canBuyButton = doc.getElementById("can-buy"),
-        main = doc.getElementById("main");
+
+
+
+
+    var buyButtonElement = document.getElementsByClassName("buy-button");
+    var buyStandElement = document.getElementsByClassName("buy-stand");
+    var canBuyButtonElement = document.getElementById("can-buy");
+    var main = document.getElementById("main");
 
     //path to product images
     const PRODUCT_IMAGES_FOLDER = "./images/products/";
 
     //id's/classes for common elements
-    const CAN_BUY_TOGGLE_VALUE = 'can-buy-toggle';
-    const CAN_BUY_AMOUNT = 'can-buy-amount';
-    const CAN_BUY_BUTTON = 'can-buy';
+    const CAN_BUY_TOGGLE_VALUE = "can-buy-toggle";
+    const CAN_BUY_AMOUNT = "can-buy-amount";
+    const CAN_BUY_BUTTON = "can-buy";
     //(press count may or may not be required)
-    const PRESS_COUNT =  'press-count';
-    const GRAND_TOTAL = 'total';
+    const PRESS_COUNT =  "press-count";
+    const GRAND_TOTAL = "total";
 
 
-    function Product(profit,standPrice,timer,id,image,counter){
+    function Product(profit,standPrice,timer,id,image,counter) {
 
         //properties
         this.profit = profit.toFixed(2);
         this.standPrice = standPrice.toFixed(2);
         this.timer = timer;
         this.id = id;
-        this.counter = counter;
+        this.counter = parseInt(1);
+        this.image = image;
 
         //this entire function will need refactoring eventually. it repeats way too much
-        this.createProduct = function(){
+        this.createProduct = function () {
 
-            var mainDiv = doc.getElementById('main'),
-            productDiv = doc.createElement('div');
+            var mainDiv = document.getElementById('main');
+            var productDiv = document.createElement('div');
             productDiv.className = "product";
             mainDiv.appendChild(productDiv);
 
-            var returnSpan = doc.createElement('p');
+            var returnSpan = document.createElement('p');
             returnSpan.className = "return";
             returnSpan.id = this.id;
             returnSpan.innerHTML = this.profit;
             productDiv.appendChild(returnSpan);
 
             //is this needed anymore? could track this within the object itself?
-            var pressCount = doc.createElement('span');
+            var pressCount = document.createElement('span');
             pressCount.style.display = "none";
             pressCount.className = "press-count";
             pressCount.innerHTML = "1";
             productDiv.appendChild(pressCount);
 
-            var imageContainer = doc.createElement('div');
+            var imageContainer = document.createElement('div');
             imageContainer.className = "image-container";
             productDiv.appendChild(imageContainer);
 
-            var buyButton = doc.createElement('button');
+            var buyButton = document.createElement('button');
             buyButton.className = "buy-button";
             buyButton.id = this.id;
             imageContainer.appendChild(buyButton);
 
-            var productImage = doc.createElement('img');
+            var productImage = document.createElement('img');
             //this needs to be a constructor argument rather than a hardcoded path
             productImage.src = PRODUCT_IMAGES_FOLDER + this.id + ".jpe";
             productImage.alt = this.id;
             buyButton.appendChild(productImage);
 
-            var productStandCountDiv = doc.createElement('div');
+            var productStandCountDiv = document.createElement('div');
             productStandCountDiv.className = "product-stand-count-div";
             productDiv.appendChild(productStandCountDiv);
 
-            var productStandCount = doc.createElement('p');
+            var productStandCount = document.createElement('p');
             productStandCount.className = "product-stand-count";
             productStandCount.innerHTML = "1";
             productStandCountDiv.appendChild(productStandCount);
 
-            var standButtonArea = doc.createElement('div');
+            var standButtonArea = document.createElement('div');
             standButtonArea.className = "stand-button-area";
             productDiv.appendChild(standButtonArea);
 
-            var standButton = doc.createElement('button');
+            var standButton = document.createElement('button');
             standButton.className = "stand-button";
             standButton.id = this.id + "-stand";
             standButtonArea.appendChild(standButton);
 
-            var standBuyTextSpan = doc.createElement('span');
+            var standBuyTextSpan = document.createElement('span');
             standBuyTextSpan.className = "stand-buy-text";
             standBuyTextSpan.innerHTML = "Get x";
             standButton.appendChild(standBuyTextSpan);
 
-            var standCanBuySpan = doc.createElement('span');
+            var standCanBuySpan = document.createElement('span');
             standCanBuySpan.className = "stand-can-buy";
             standCanBuySpan.id = "beer-stand-can-buy";
             standCanBuySpan.innerHTML = "1";
             standButton.appendChild(standCanBuySpan);
 
-            var standPriceSpan = doc.createElement('span');
+            var standPriceSpan = document.createElement('span');
             standPriceSpan.className = "stand-price";
             standPriceSpan.id = "beer-stand-price";
             standPriceSpan.innerHTML = this.standPrice;
             standButton.appendChild(standPriceSpan);
 
-            var timerDiv = doc.createElement('div');
+            var timerDiv = document.createElement('div');
             timerDiv.className = "timer";
             productDiv.appendChild(timerDiv);
 
-            var returnTimerSpan = doc.createElement("span");
+            var returnTimerSpan = document.createElement("span");
             returnTimerSpan.id = "return-timer";
             returnTimerSpan.innerHTML = this.timer;
             timerDiv.appendChild(returnTimerSpan);
 
-
         };
 
-        this.getCounter = function(){
+        this.getCounter = function () {
 
-          return this.counter;
-        }
+            return this.counter;
+        };
+
+        this.getProfit = function () {
+
+            return this.profit;
+        };
 
     }
 
@@ -142,11 +149,11 @@
 
 
     var getUseableValue = function(className){
-        return parseFloat(doc.getElementsByClassName(className).innerHTML);
+        return parseFloat(document.getElementsByClassName(className).innerHTML);
     };
 
     var getElement = function(className){
-        return doc.getElementsByClassName(className);
+        return document.getElementsByClassName(className);
     };
 
     //var changeClass = function(elem,classToRemove,classToAdd){
@@ -156,7 +163,7 @@
 
     var disableButton = function(id){
 
-        var disabledButton = doc.getElementById(id);
+        var disabledButton = document.getElementById(id);
         disabledButton.setAttribute('disabled', 'disabled');
         //changeClass(disabledButton,'enabledButton','disabledButton');
         return disabledButton;
@@ -164,7 +171,7 @@
 
     var enableButton = function(id){
 
-        var enabledButton = doc.getElementById(id);
+        var enabledButton = document.getElementById(id);
 
         enabledButton.removeAttribute('disabled');
        // changeClass(enabledButton,'disabledButton','enabledButton');
@@ -176,7 +183,7 @@
     var disableReturnButton = function(id){
 
 
-        var disabledButton = doc.getElementById(id);
+        var disabledButton = document.getElementById(id);
         disabledButton.setAttribute('disabled','disabled');
 
         return disabledButton;
@@ -184,7 +191,7 @@
 
     var enableReturnButton = function(id){
 
-        var enabledButton = doc.getElementById(id);
+        var enabledButton = document.getElementById(id);
 
         enabledButton.removeAttribute('disabled');
 
@@ -305,19 +312,19 @@
 
         switch(buttonPress){
             case 1:
-                canBuySpan.innerHTML="x 10";
+                canBuySpan.innerHTML = "x 10";
                 break;
             case 2:
-                canBuySpan.innerHTML="x 100";
+                canBuySpan.innerHTML = "x 100";
                 break;
             //case 3:
             //    canBuySpan.innerHTML="Max";
             //    break;
             case 3:
-                canBuySpan.innerHTML="x 1";
+                canBuySpan.innerHTML = "x 1";
                 break;
             default:
-                canBuySpan.innerHTML=1;
+                canBuySpan.innerHTML = 1;
         }
 
         //modifyBuyStandValue();
@@ -361,7 +368,8 @@
 
     var incrementPressCount = function(){
 
-       return beer.getCounter() + 1;
+       //return beer.getCounter();
+        return beer.profit;
 
     };
 
@@ -417,13 +425,13 @@
 
     var resetTimer = function(){
 
-        //return doc.getElementById('return-timer').innerHTML = '00:00:00';
+        //return document.getElementById('return-timer').innerHTML = '00:00:00';
 
     };
 
     var countdown = function(button,button2){
 
-        var useableTime = document.getElementById('return-timer').innerHTML;
+        var useableTime = documentument.getElementById('return-timer').innerHTML;
         var useableTimeElements = useableTime.split(':');
         var hours = parseInt(useableTimeElements[0], 10);
         var minutes = parseInt(useableTimeElements[1],10);
@@ -480,26 +488,31 @@
             if (classes) {
                 for (var x = 0; x < classes.length; x++) {
                     if (classes[x] == "buy-button") {
-                      produceReturnAction();
-                      changeButtonStyleOnPress();
+
+                        console.log("buy");
+                        // produceReturnAction();
+                      // changeButtonStyleOnPress();
                     }
                     if (classes[x] == "stand-button"){
 
-                       // buyStandAction(getUseableValue(NO_OF_BEER_STANDS_CAN_BUY));
+                        console.log("stand" + this.image );
+
+                       //buyStandAction(getUseableValue(GRAND_TOTAL).innerHTML);
+                        /// this works: put some code in here to do some stuff
+
                     }
                 }
             }
         }
     });
-    canBuyButton.addEventListener('click',cycleThroughCanBuyAmounts);
+    canBuyButtonElement.addEventListener('click',cycleThroughCanBuyAmounts);
     //BEERManagerButton.addEventListener('click',function(){buyManagerAction(BEER_MANAGER_PRICE);});
 
     //canBuyManager(BEER_MANAGER_PRICE,BEER_MANAGER_BUTTON);
 
-    console.log(beer.getCounter());
+    console.log(incrementPressCount());
 
 
-})();
 
 
 
